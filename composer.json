@@ -1,7 +1,9 @@
 {
     "name": "openwines/references-bundle",
-    "description": "References Data Bundle for OpenWines' Product Information Manager",
     "type": "symfony-bundle",
+    "description": "Akeneo PIM References Data Bundle for OpenWines Product Information Manager",
+    "keywords": ["pim", "akeneo", "ecommerce", "integration", "reference data"],
+    "homepage": "http://www.akeneo.com",
     "license": "OSL-3.0",
     "authors": [
         {
@@ -9,5 +11,26 @@
             "email": "ronan.guilloux@gmail.com"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/OpenWines/ReferencesBundle.git",
+            "branch": "master"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "akeneo/pim-community-dev": "1.7.*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "@stable"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "OpenWines\\ReferencesBundle\\": ""
+        }
+    }
 }
