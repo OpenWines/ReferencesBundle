@@ -6,6 +6,8 @@ Wine industry references data manager for OpenWines:
 - Regions
 - Appelations
 
+![OpenWines references data](ScreenShot1.png)
+
 Akeneo PIM bundle based on [Akeneo PIM 1.7 Community Edition](https://www.akeneo.com/download)
 
 
