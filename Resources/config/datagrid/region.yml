@@ -8,15 +8,15 @@ datagrid:
             repository_method: createDatagridQueryBuilder
         columns:
             code:
-                label: Code
+                label: labels.code
             name:
-                label: Name
+                label: labels.name
             country:
-                label: Country
+                label: labels.country
             area:
-                label: Area (ha)
+                label: labels.area
             departments:
-                label: Departments
+                label: labels.departments
         properties:
             id: ~
             show_link:
@@ -39,21 +39,21 @@ datagrid:
                     - customEntityName
         actions:
             show:
-                type:      navigate
-                label:     Show the reference data
-                icon:      eye-open
-                link:      show_link
+                type:       navigate
+                label:      actions.show
+                icon:       eye-open
+                link:       show_link
             edit:
-                type:      navigate
-                label:     Edit the reference data
-                icon:      edit
-                link:      edit_link
-                rowAction: true
+                type:       navigate
+                label:      actions.edit
+                icon:       edit
+                link:       edit_link
+                rowAction:  true
             delete:
-                type:  delete
-                label: Delete the reference data
-                icon:  trash
-                link:  delete_link
+                type:       delete
+                label:      actions.delete
+                icon:       trash
+                link:       delete_link
         filters:
             columns:
                 code:
@@ -74,11 +74,11 @@ datagrid:
                             choices: @openwines.form.region->getTypes
                 departments:
                     type:       string
-                    label:      Departments
+                    label:      labels.departments
                     data_name:  rd.departments
                 area:
                     type:       number
-                    label:      Area
+                    label:      labels.area
                     data_name:  rd.area
         sorters:
             columns:
@@ -88,6 +88,8 @@ datagrid:
                     data_name:  rd.name
                 area:
                     data_name:  rd.area
+                country:
+                    data_name:  rd.country
                 departments:
                     data_name:  rd.departments
             default:

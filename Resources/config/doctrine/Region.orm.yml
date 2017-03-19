@@ -28,11 +28,16 @@ OpenWines\ReferencesBundle\Entity\Region:
             length: 255
             unique: true
             nullable: true
+        country:
+            type: string
+            length: 255
+            unique: false
+            nullable: true
         type:
             type: string
             length: 255
             unique: false
-            unique: true
+            nullable: true
         area:
             type: float
             unique: false
@@ -50,7 +55,7 @@ OpenWines\ReferencesBundle\Entity\Region:
         image_url:
             type: string
             length: 255
-            unique: true
+            unique: false
             nullable: true
         created:
             type: datetime

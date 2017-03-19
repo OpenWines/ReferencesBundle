@@ -32,6 +32,12 @@ class RegionType extends AbstractType implements ContainerAwareInterface
         $builder->add('name');
         $builder->add('description', 'textarea');
         $builder->add('departments');
+        $builder->add('country',
+            'choice', [
+                'choices' => $this->regionOptions['countries'],
+                'choices_as_values' => false,
+            ]
+        );
         $builder->add('area', 'number');
         $builder->add('type',
             'choice', [

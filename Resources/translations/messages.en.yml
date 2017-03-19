@@ -51,3 +51,15 @@ flash.varietal:
     created: The varietal has been created
     updated: The varietal has been updated
     removed: The varietal has beed removed
+
+labels:
+    code: Code
+    name: Name
+    country: Country
+    departments: Departments
+    area: Area (ha)
+
+actions:
+    show: Show the reference data
+    edit: Edit the reference data
+    delete: Delete the reference data

@@ -4,6 +4,12 @@ parameters:
       big: grand terroir
       small: terroir de petite taille
       disappeared: terroir disparu
+    countries:
+      France: France
+      Germany: Germany
+      Italy: Italy
+      Spain: Spain
+      US: United States
   appellations:
     types:
       IGP: Indication Géographique Protégée

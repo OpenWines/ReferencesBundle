@@ -27,19 +27,6 @@ class ReferenceEntity extends AbstractCustomEntity
     }
 
     /**
-     * ReferenceEntity constructor.
-     */
-    public function __construct() {
-        if ($this->getCreated() == null) {
-            $this->setCreated(new \DateTime());
-        }
-        $this->setCreated(new \DateTime());
-        if ($this->getUpdated() == null) {
-            $this->setUpdated(new \DateTime());
-        }
-    }
-
-    /**
      * @return $this
      */
     public function prePersist() {
