@@ -70,6 +70,11 @@ Update your database schema:
 php app/console doctrine:schema:update -e=prod --force
 ```
 
+Install fixtures:
+
+```bash
+mysql -u root  openwines < vendor/openwines/references-bundle/Resources/data/fixtures/openwines_ref_region.sql
+```
 
 ## TODO
 
