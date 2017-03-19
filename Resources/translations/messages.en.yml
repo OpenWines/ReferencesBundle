@@ -1,0 +1,53 @@
+pim_custom_entity.reference_data.appellation:
+    menu_entry: Appellations
+    edit: Edit an appellation
+    create: Create an appellation
+    index: List appellations
+    delete: Delete an appellation
+
+confirmation.remove.appellation: Do yoy really want to remove this appellation?
+
+btn.create.appellation: Create a new appellation
+appellation.create: Create a new appellation
+appellation.overview: Appellations
+
+flash.appellation:
+    created: The appellation has been created
+    updated: The appellation has been updated
+    removed: The appellation has beed removed
+
+pim_custom_entity.reference_data.region:
+    menu_entry: Regions
+    edit: Edit an region
+    create: Create an region
+    index: List regions
+    delete: Delete an region
+
+confirmation.remove.region: Do yoy really want to remove this region?
+
+btn.create.region: Create a new region
+region.create: Create a new region
+region.overview: Regions
+
+flash.region:
+    created: The region has been created
+    updated: The region has been updated
+    removed: The region has beed removed
+
+pim_custom_entity.reference_data.varietal:
+    menu_entry: Varietals
+    edit: Edit an varietal
+    create: Create an varietal
+    index: List varietals
+    delete: Delete an varietal
+
+confirmation.remove.varietal: Do yoy really want to remove this varietal?
+
+btn.create.varietal: Create a new varietal
+varietal.create: Create a new varietal
+varietal.overview: Varietals
+
+flash.varietal:
+    created: The varietal has been created
+    updated: The varietal has been updated
+    removed: The varietal has beed removed

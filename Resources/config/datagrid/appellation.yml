@@ -1,0 +1,118 @@
+datagrid:
+    appellation:
+        options:
+            entityHint: appellation
+        source:
+            type: pim_datasource_default
+            entity: OpenWines\ReferencesBundle\Entity\Appellation
+            repository_method: createDatagridQueryBuilder
+        columns:
+            code:
+                label: Code
+            name:
+                label: Name
+            appellation_type:
+                label: Type
+            wine_sweetness:
+                label: Sweetness
+            wine_color:
+                label: Color
+            annual_production_quantity:
+                label: Production (hl)
+            area:
+                label: Area (ha)
+            creation_year:
+                label: Creation
+        properties:
+            id: ~
+            show_link:
+                type: url
+                route: pim_customentity_show
+                params:
+                    - id
+                    - customEntityName
+            edit_link:
+                type: url
+                route: pim_customentity_edit
+                params:
+                    - id
+                    - customEntityName
+            delete_link:
+                type: url
+                route: pim_customentity_delete
+                params:
+                    - id
+                    - customEntityName
+        actions:
+            show:
+                type:      navigate
+                label:     Show the reference data
+                icon:      eye-open
+                link:      show_link
+            edit:
+                type:      navigate
+                label:     Edit the reference data
+                icon:      edit
+                link:      edit_link
+                rowAction: true
+            delete:
+                type:  delete
+                label: Delete the reference data
+                icon:  trash
+                link:  delete_link
+        filters:
+            columns:
+                code:
+                    type:      string
+                    label:     Code
+                    data_name: rd.code
+                name:
+                    type:      string
+                    label:     Name
+                    data_name: rd.name
+                appellation_type:
+                    type:      string
+                    label:     Type
+                    data_name: rd.appellation_type
+                wine_color:
+                    type:      string
+                    label:     Color
+                    data_name: rd.wine_color
+                wine_sweetness:
+                    type:      string
+                    label:     Sweetness
+                    data_name: rd.wine_sweetness
+                annual_production_quantity:
+                    type:      number
+                    label:     Production
+                    data_name: rd.annual_production_quantity
+                area:
+                    type:      number
+                    label:     Area
+                    data_name: rd.area
+                #creation_year:
+                #    type:      string
+                #    label:     Creation
+                #    data_name: rd.creation_year
+
+        sorters:
+            columns:
+                code:
+                    data_name: rd.code
+                name:
+                    data_name: rd.name
+                appellation_type:
+                    data_name: rd.appellation_type
+                wine_color:
+                    data_name: rd.wine_color
+                wine_sweetness:
+                    data_name: rd.wine_sweetness
+                annual_production_quantity:
+                    data_name: rd.annual_production_quantity
+                area:
+                    data_name: rd.area
+                #creation_year:
+                #    data_name: rd.creation_year
+
+            default:
+                code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'

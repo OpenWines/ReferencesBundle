@@ -1,0 +1,66 @@
+OpenWines\ReferencesBundle\Entity\Varietal:
+    repositoryClass: OpenWines\ReferencesBundle\Repository\VarietalRepository
+    type: entity
+    table: openwines_ref_varietal
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    lifecycleCallbacks:
+        prePersist: [ prePersist ]
+        postPersist: [ postPersist ]
+    manyToMany:
+        appellations:
+            targetEntity: OpenWines\ReferencesBundle\Entity\Appellation
+            mappedBy: varietals
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            nullable: false
+            unique: true
+            length: 255
+        name:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        family:
+            type: string
+            length: 255
+            unique: false
+            nullable: true
+        description:
+            type: text
+            unique: false
+            nullable: false
+        area:
+            type: integer
+            length: 255
+            unique: false
+            nullable: false
+        wikipedia_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        wikidata_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        image_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        created:
+            type: datetime
+            unique: false
+            nullable: false
+        updated:
+            type: datetime
+            unique: false
+            nullable: false
+

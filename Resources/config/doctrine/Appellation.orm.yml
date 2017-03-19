@@ -1,0 +1,108 @@
+OpenWines\ReferencesBundle\Entity\Appellation:
+    repositoryClass: OpenWines\ReferencesBundle\Repository\AppellationRepository
+    type: entity
+    table: openwines_ref_appellation
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    manyToMany:
+        varietals:
+            targetEntity: Varietal
+            inversedBy: varietals
+            joinTable:
+                name: openwines_ref_appellations_varietals
+                joinColumns:
+                    varietal_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    appellation_id:
+                        referencedColumnName: id
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            nullable: false
+            unique: true
+            length: 255
+        name:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        appellation_type:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        area:
+            type: integer
+            length: 255
+            unique: false
+            nullable: false
+        annual_production_quantity:
+            type: integer
+            unique: false
+            nullable: true
+        soil:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        wine_sweetness:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        wine_color:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        wine_color:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        description:
+            type: text
+            unique: false
+            nullable: false
+        odg_name:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        odg_url:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        wikipedia_url:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        wikidata_url:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        image_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: true
+        creation_year:
+            type: integer
+            unique: false
+            nullable: true
+        created:
+            type: datetime
+            unique: false
+            nullable: false
+        updated:
+            type: datetime
+            unique: false
+            nullable: false

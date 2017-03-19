@@ -1,0 +1,42 @@
+parameters:
+  regions:
+    types:
+      big: grand terroir
+      small: terroir de petite taille
+      disappeared: terroir disparu
+  appellations:
+    types:
+      IGP: Indication Géographique Protégée
+      AOP: Appellation d'Origine Protégée
+      AOC: Appellation d'Origine Controlée
+      PDO: Protected Designation of Origin
+      PGI: Protected Geographical Indication
+      TSG: Traditional Specialities Guaranteed
+      GI: Geographical Indication
+      DVA: Designated Viticultural Area
+      AVA: American Viticultural Area
+      DO: Denominación de Origen
+      DOC: Denominazione di Origine Controllata
+      DOCG: Denominazione di Origine Controllata e Garantita
+      DOP: Denominazione di Origine Protetta
+      QbA: Qualitätswein bestimmter Anbaugebiete
+      QmP: Qualitätswein mit Prädikat
+      Other: Autre
+  wines:
+    colors:
+      red: red
+      white: white
+      rosé: rosé
+    sweetness:
+      brut-nature: brut-nature
+      extra-brut: extra-brut
+      brut: brut
+      extra-dry: extra-dry
+      dry: dry
+      medium-dry: demi-sec
+      sweet: moëlleux
+      dessert: liquoreux
+    sparkling:
+      still: tranquille
+      semi-sparkling: pétillant
+      sparkling: effervescent

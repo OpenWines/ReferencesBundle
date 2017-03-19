@@ -1,0 +1,40 @@
+custom_entities:
+    appellation:
+        entity_class: OpenWines\ReferencesBundle\Entity\Appellation
+        actions:
+            index:
+                service: pim_custom_entity.action.index
+                route: pim_customentity_index
+                quick_create: false
+                template: PimCustomEntityBundle:CustomEntity:index.html.twig
+                row_actions: ['edit', 'delete']
+            edit:
+                form_type: openwines_appellation
+            create:
+                form_type: openwines_appellation
+    region:
+        entity_class: OpenWines\ReferencesBundle\Entity\Region
+        actions:
+            index:
+                service: pim_custom_entity.action.index
+                route: pim_customentity_index
+                quick_create: false
+                template: PimCustomEntityBundle:CustomEntity:index.html.twig
+                row_actions: ['edit', 'delete']
+            edit:
+                form_type: openwines_region
+            create:
+                form_type: openwines_region
+    varietal:
+        entity_class: OpenWines\ReferencesBundle\Entity\Varietal
+        actions:
+            index:
+                service: pim_custom_entity.action.index
+                route: pim_customentity_index
+                quick_create: false
+                template: PimCustomEntityBundle:CustomEntity:index.html.twig
+                row_actions: ['edit', 'delete']
+            edit:
+                form_type: openwines_varietal
+            create:
+                form_type: openwines_varietal

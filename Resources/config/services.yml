@@ -1,0 +1,20 @@
+parameters:
+#    open_wines_web_app.example.class: OpenWines\ReferencesBundle\Example
+
+services:
+    openwines.form.appellation:
+        class: OpenWines\ReferencesBundle\Form\Type\AppellationType
+        calls:
+              - [setContainer, ['@service_container']]
+        tags:
+            - { name: form.type, alias: openwines_appellation }
+    openwines.form.region:
+        class: OpenWines\ReferencesBundle\Form\Type\RegionType
+        calls:
+              - [setContainer, ['@service_container']]
+        tags:
+            - { name: form.type, alias: openwines_region }
+    openwines.form.varietal:
+        class: OpenWines\ReferencesBundle\Form\Type\VarietalType
+        tags:
+            - { name: form.type, alias: openwines_varietal }

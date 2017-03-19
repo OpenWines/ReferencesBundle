@@ -1,0 +1,13 @@
+{
+    "name": "openwines/references-bundle",
+    "description": "References Data Bundle for OpenWines' Product Information Manager",
+    "type": "symfony-bundle",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Ronan Guilloux",
+            "email": "ronan.guilloux@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,62 @@
+OpenWines\ReferencesBundle\Entity\Region:
+    repositoryClass: OpenWines\ReferencesBundle\Repository\RegionRepository
+    type: entity
+    table: openwines_ref_region
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            nullable: false
+            unique: true
+            length: 255
+        name:
+            type: string
+            length: 255
+            unique: true
+            nullable: false
+        description:
+            type: text
+            unique: false
+            nullable: true
+        departments:
+            type: string
+            length: 255
+            unique: true
+            nullable: true
+        type:
+            type: string
+            length: 255
+            unique: false
+            unique: true
+        area:
+            type: float
+            unique: false
+            nullable: true
+        wikipedia_url:
+            type: string
+            length: 255
+            unique: false
+            nullable: true
+        wikidata_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: true
+        image_url:
+            type: string
+            length: 255
+            unique: true
+            nullable: true
+        created:
+            type: datetime
+            unique: false
+            nullable: true
+        updated:
+            type: datetime
+            unique: false
+            nullable: true

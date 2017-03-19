@@ -1,0 +1,5 @@
+parameters:
+    pim_catalog.entity.product_value.class: OpenWines\ReferencesBundle\Model\ProductValue
+    openwines_custom_entity.entity.appellation.class: OpenWines\ReferencesBundle\Entity\Appellation
+    openwines_custom_entity.entity.region.class: OpenWines\ReferencesBundle\Entity\Region
+    openwines_custom_entity.entity.varietal.class: OpenWines\ReferencesBundle\Entity\Varietal

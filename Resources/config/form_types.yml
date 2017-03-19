@@ -1,0 +1,13 @@
+services:
+    openwines.form.appellation:
+        class: OpenWines\ReferencesBundle\Form\Type\AppellationType
+        tags:
+            - { name: form.type, alias: openwines_appellation }
+    openwines.form.region:
+        class: OpenWines\ReferencesBundle\Form\Type\RegionType
+        tags:
+            - { name: form.type, alias: openwines_region }
+    openwines.form.varietal:
+        class: OpenWines\ReferencesBundle\Form\Type\VarietalType
+        tags:
+            - { name: form.type, alias: openwines_varietal }

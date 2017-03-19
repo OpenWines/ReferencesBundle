@@ -1,0 +1,22 @@
+oro_menu_config:
+    items:
+        openwines_enrich_varietal:
+            label:              'pim_custom_entity.reference_data.varietal.menu_entry'
+            route:              'pim_customentity_index'
+            routeParameters:    { customEntityName: varietal }
+        openwines_enrich_appellation:
+            label:              'pim_custom_entity.reference_data.appellation.menu_entry'
+            route:              'pim_customentity_index'
+            routeParameters:    { customEntityName: appellation }
+        openwines_enrich_region:
+            label:              'pim_custom_entity.reference_data.region.menu_entry'
+            route:              'pim_customentity_index'
+            routeParameters:    { customEntityName: region }
+    tree:
+        application_menu:
+            children:
+                pim_reference_data_tab:
+                    children:
+                        openwines_enrich_varietal: ~
+                        openwines_enrich_appellation: ~
+                        openwines_enrich_region: ~

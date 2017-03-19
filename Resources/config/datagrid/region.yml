@@ -1,0 +1,94 @@
+datagrid:
+    region:
+        options:
+            entityHint: region
+        source:
+            type: pim_datasource_default
+            entity: OpenWines\ReferencesBundle\Entity\Region
+            repository_method: createDatagridQueryBuilder
+        columns:
+            code:
+                label: Code
+            name:
+                label: Name
+            country:
+                label: Country
+            area:
+                label: Area (ha)
+            departments:
+                label: Departments
+        properties:
+            id: ~
+            show_link:
+                type: url
+                route: pim_customentity_show
+                params:
+                    - id
+                    - customEntityName
+            edit_link:
+                type: url
+                route: pim_customentity_edit
+                params:
+                    - id
+                    - customEntityName
+            delete_link:
+                type: url
+                route: pim_customentity_delete
+                params:
+                    - id
+                    - customEntityName
+        actions:
+            show:
+                type:      navigate
+                label:     Show the reference data
+                icon:      eye-open
+                link:      show_link
+            edit:
+                type:      navigate
+                label:     Edit the reference data
+                icon:      edit
+                link:      edit_link
+                rowAction: true
+            delete:
+                type:  delete
+                label: Delete the reference data
+                icon:  trash
+                link:  delete_link
+        filters:
+            columns:
+                code:
+                    type:       string
+                    label:      Code
+                    data_name:  rd.code
+                name:
+                    type:       string
+                    label:      Name
+                    data_name:  rd.name
+                type:
+                    type:       choice
+                    label:      Type
+                    data_name:  rd.type
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.region->getTypes
+                departments:
+                    type:       string
+                    label:      Departments
+                    data_name:  rd.departments
+                area:
+                    type:       number
+                    label:      Area
+                    data_name:  rd.area
+        sorters:
+            columns:
+                code:
+                    data_name:  rd.code
+                name:
+                    data_name:  rd.name
+                area:
+                    data_name:  rd.area
+                departments:
+                    data_name:  rd.departments
+            default:
+                code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'
