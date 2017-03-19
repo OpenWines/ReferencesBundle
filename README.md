@@ -1,6 +1,8 @@
 # References extension
 
-Wine industry references data manager for OpenWines:
+Wine industry references data manager for [OpenWines](http://openwines.eu).
+
+Contains:
 
 - Varietals
 - Regions
