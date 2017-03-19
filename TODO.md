@@ -1,3 +1,4 @@
+- [ ] Cepages: http://data.okfn.org/data/OpenWines/area_cepages_france
 - [ ] i18N all the things!
 - [ ] start with the [Vins de Loire](http://www.vinsvaldeloire.fr/SiteGP/FR/)
 - [ ] Add a `millésime` / `vintage` entity: http://goo.gl/k7R0nS
