@@ -6,10 +6,6 @@ OpenWines\ReferencesBundle\Entity\Varietal:
     lifecycleCallbacks:
         prePersist: [ prePersist ]
         postPersist: [ postPersist ]
-    manyToMany:
-        appellations:
-            targetEntity: OpenWines\ReferencesBundle\Entity\Appellation
-            mappedBy: varietals
     fields:
         id:
             type: integer

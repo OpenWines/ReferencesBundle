@@ -2,7 +2,14 @@ OpenWines\ReferencesBundle\Entity\Region:
     repositoryClass: OpenWines\ReferencesBundle\Repository\RegionRepository
     type: entity
     table: openwines_ref_region
+    lifecycleCallbacks:
+        prePersist: [ prePersist ]
+        postPersist: [ postPersist ]
     changeTrackingPolicy: DEFERRED_EXPLICIT
+    oneToMany:
+        appellations:
+            targetEntity: OpenWines\ReferencesBundle\Entity\Appellation
+            mappedBy: region
     fields:
         id:
             type: integer

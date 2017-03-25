@@ -47,7 +47,7 @@ class Appellation extends ReferenceEntity
     /**
      * @var string Wine type
      *
-     * @example "vin blanc mousseux"
+     * @example "moelleux"
      */
     protected $wine_sweetness;
 
@@ -59,9 +59,21 @@ class Appellation extends ReferenceEntity
     protected $wine_color;
 
     /**
+     * @var string Wine sparklingness
+     *
+     * @example "mousseux"
+     */
+    protected $wine_sparklingness;
+
+    /**
      * @var ArrayCollection varietals (cépages)
      */
     protected $varietals;
+
+    /**
+     * @var Region region code
+     */
+    protected $region;
 
     /**
      * @var string Description
@@ -338,4 +350,37 @@ class Appellation extends ReferenceEntity
     {
         $this->creation_year = $creation_year;
     }
+
+    /**
+     * @return string
+     */
+    public function getWineSparklingness()
+    {
+        return $this->wine_sparklingness;
+    }
+
+    /**
+     * @param string $wine_sparklingness
+     */
+    public function setWineSparklingness($wine_sparklingness)
+    {
+        $this->wine_sparklingness = $wine_sparklingness;
+    }
+
+    /**
+     * @return Region
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * @param Region $region
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+    }
+
 }

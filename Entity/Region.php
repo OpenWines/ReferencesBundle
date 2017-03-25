@@ -50,6 +50,11 @@ class Region extends ReferenceEntity
     protected $wines;
 
     /**
+     * @var ArrayCollection
+     */
+    protected $appellations;
+
+    /**
      * @var ArrayCollection varietals (cépages)
      */
     protected $main_grape_varieties;
@@ -88,6 +93,11 @@ class Region extends ReferenceEntity
      * @var string image URL
      */
     private $image_url;
+
+
+    public function __construct() {
+        $this->appellations = new ArrayCollection();
+    }
 
     /**
      * @return string
@@ -321,5 +331,21 @@ class Region extends ReferenceEntity
     public function setImageUrl($image_url)
     {
         $this->image_url = $image_url;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getAppellations()
+    {
+        return $this->appellations;
+    }
+
+    /**
+     * @param ArrayCollection $appellations
+     */
+    public function setAppellations($appellations)
+    {
+        $this->appellations = $appellations;
     }
 }

@@ -2,19 +2,17 @@ OpenWines\ReferencesBundle\Entity\Appellation:
     repositoryClass: OpenWines\ReferencesBundle\Repository\AppellationRepository
     type: entity
     table: openwines_ref_appellation
-    changeTrackingPolicy: DEFERRED_EXPLICIT
-    manyToMany:
-        varietals:
-            targetEntity: Varietal
-            inversedBy: varietals
-            joinTable:
-                name: openwines_ref_appellations_varietals
-                joinColumns:
-                    varietal_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    appellation_id:
-                        referencedColumnName: id
+    changeTrackingPoloicy: DEFERRED_EXPLICIT
+    lifecycleCallbacks:
+        prePersist: [ prePersist ]
+        postPersist: [ postPersist ]
+    manyToOne:
+        region:
+            targetEntity: OpenWines\ReferencesBundle\Entity\Region
+            inversedBy: appellations
+            joinColumn:
+                name: region_id
+                referencedColumnName: id
     fields:
         id:
             type: integer
@@ -29,18 +27,18 @@ OpenWines\ReferencesBundle\Entity\Appellation:
         name:
             type: string
             length: 255
-            unique: true
+            unique: false
             nullable: false
         appellation_type:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         area:
             type: integer
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         annual_production_quantity:
             type: integer
             unique: false
@@ -49,46 +47,46 @@ OpenWines\ReferencesBundle\Entity\Appellation:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         wine_sweetness:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
+        wine_sparklingness:
+            type: string
+            length: 255
+            unique: false
+            nullable: true
         wine_color:
             type: string
             length: 255
             unique: false
-            nullable: false
-        wine_color:
-            type: string
-            length: 255
-            unique: false
-            nullable: false
+            nullable: true
         description:
             type: text
             unique: false
-            nullable: false
+            nullable: true
         odg_name:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         odg_url:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         wikipedia_url:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         wikidata_url:
             type: string
             length: 255
             unique: false
-            nullable: false
+            nullable: true
         image_url:
             type: string
             length: 255
@@ -101,8 +99,8 @@ OpenWines\ReferencesBundle\Entity\Appellation:
         created:
             type: datetime
             unique: false
-            nullable: false
+            nullable: true
         updated:
             type: datetime
             unique: false
-            nullable: false
+            nullable: true
