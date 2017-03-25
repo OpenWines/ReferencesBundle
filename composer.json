@@ -20,7 +20,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "akeneo/pim-community-dev": "v1.7.0",
+        "akeneo/pim-community-dev": "v1.7.*",
         "akeneo-labs/custom-entity-bundle": "1.10.*"
     },
     "require-dev": {
