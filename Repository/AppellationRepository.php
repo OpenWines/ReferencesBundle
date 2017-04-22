@@ -31,6 +31,26 @@ class AppellationRepository extends BaseRepository
         }
     }
 
+    public function findUniqueSoils()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                'SELECT a.soil FROM OpenWinesReferencesBundle:Appellation a'
+            );
+        try {
+            $results =  $query->getResult();
+            $soilsList = [];
+            foreach($results as $item) {
+                if(!is_null($item['soil'])) {
+                    $soilsList = array_merge($soilsList, $item['soil']);
+                }
+            }
+            return array_unique($soilsList);
+        } catch (NoResultException $e) {
+            return;
+        }
+    }
+
     /** *************** */
     /** B U I L D E R S */
 

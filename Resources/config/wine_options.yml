@@ -12,6 +12,7 @@ parameters:
       US: United States
   appellations:
     types:
+      Other: Autre
       IGP: Indication Géographique Protégée
       AOP: Appellation d'Origine Protégée
       AOC: Appellation d'Origine Controlée
@@ -27,22 +28,21 @@ parameters:
       DOP: Denominazione di Origine Protetta
       QbA: Qualitätswein bestimmter Anbaugebiete
       QmP: Qualitätswein mit Prädikat
-      Other: Autre
   wines:
     colors:
       red: red
       white: white
       rosé: rosé
-    sweetness:
+    sweetness:                  # sucre, douceur, sécheresse
       brut-nature: brut-nature
       extra-brut: extra-brut
       brut: brut
-      extra-dry: extra-dry
-      dry: dry
-      medium-dry: demi-sec
-      sweet: moëlleux
-      dessert: liquoreux
-    sparkling:
-      still: tranquille
-      semi-sparkling: pétillant
-      sparkling: effervescent
+      extra-dry: extra-dry      # très sec, entre 0 et 2 g/l
+      dry: dry                  # sec
+      medium-dry: medium-dry    # demi-sec, entre 10 et 20 g/l
+      sweet: sweet              # moëlleux, doux, entre 20 et 40 g/l
+      dessert: dessert          # liquoreux, plus de 40 g/l
+    sparklingness:                    # effervescence
+      still: still                    # tranquille
+      semi-sparkling: semi-sparkling  # pétillant
+      sparkling: sparkling            # effervescent/fines bulles

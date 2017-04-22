@@ -68,6 +68,15 @@ class RegionType extends AbstractType implements ContainerAwareInterface
 
     public function getTypes()
     {
-        return $this->container->getParameter('regions');
+        $options = $this->container->getParameter('regions');
+
+        return $options['types'];
+    }
+
+    public function getType($key)
+    {
+        $options = $this->container->getParameter('regions');
+
+        return $options['types'][$key];
     }
 }

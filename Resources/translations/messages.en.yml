@@ -58,8 +58,16 @@ labels:
     country: Country
     departments: Departments
     area: Area (ha)
+    type: Type
 
 actions:
     show: Show the reference data
     edit: Edit the reference data
     delete: Delete the reference data
+
+Sweetness: Douceur
+Sparklingness: Effervescence
+Color: Couleur
+Production: Production
+Area: Aire
+Creation: Création

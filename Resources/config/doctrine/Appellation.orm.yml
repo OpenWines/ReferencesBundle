@@ -29,38 +29,74 @@ OpenWines\ReferencesBundle\Entity\Appellation:
             length: 255
             unique: false
             nullable: false
-        appellation_type:
+        type:
+            type: string
+            length: 255
+            unique: false
+            nullable: true
+        year:
+            type: smallint
+            unique: false
+            nullable: true
+        departments:
+            type: simple_array
+            unique: false
+            nullable: true
+        sun_exposure_yearly_hours:
+            type: smallint
+            unique: false
+            nullable: true
+        climate:
             type: string
             length: 255
             unique: false
             nullable: true
         area:
-            type: integer
-            length: 255
+            type: smallint
+            unique: false
+            nullable: true
+        winegrowers_count:
+            type: smallint
             unique: false
             nullable: true
         annual_production_quantity:
-            type: integer
+            type: smallint
             unique: false
             nullable: true
         soil:
-            type: string
-            length: 255
+            type: simple_array
+            unique: false
+            nullable: true
+        density:
+            type: smallint
+            unique: false
+            nullable: true
+        yield_per_hectare_min:
+            type: smallint
+            unique: false
+            nullable: true
+        yield_per_hectare_max:
+            type: smallint
+            unique: false
+            nullable: true
+        wine_types:
+            type: simple_array
             unique: false
             nullable: true
         wine_sweetness:
-            type: string
-            length: 255
-            unique: false
-            nullable: true
-        wine_sparklingness:
-            type: string
-            length: 255
+            type: simple_array
             unique: false
             nullable: true
         wine_color:
-            type: string
-            length: 255
+            type: simple_array
+            unique: false
+            nullable: true
+        wine_sparklingness:
+            type: simple_array
+            unique: false
+            nullable: true
+        varietals:
+            type: simple_array
             unique: false
             nullable: true
         description:
@@ -91,10 +127,6 @@ OpenWines\ReferencesBundle\Entity\Appellation:
             type: string
             length: 255
             unique: true
-            nullable: true
-        creation_year:
-            type: integer
-            unique: false
             nullable: true
         created:
             type: datetime

@@ -11,17 +11,21 @@ datagrid:
                 label: Code
             name:
                 label: Name
-            appellation_type:
+            type:
                 label: Type
             wine_sweetness:
                 label: Sweetness
+            wine_sparklingness:
+                label: Sparklingness
             wine_color:
                 label: Color
             annual_production_quantity:
                 label: Production (hl)
+            soil:
+                label: Soil
             area:
                 label: Area (ha)
-            creation_year:
+            year:
                 label: Creation
         properties:
             id: ~
@@ -70,18 +74,43 @@ datagrid:
                     type:      string
                     label:     Name
                     data_name: rd.name
-                appellation_type:
-                    type:      string
+                type:
+                    type:      choice
                     label:     Type
-                    data_name: rd.appellation_type
+                    data_name: rd.type
                 wine_color:
-                    type:      string
+                    type:      choice
                     label:     Color
                     data_name: rd.wine_color
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.appellation->getColors
                 wine_sweetness:
-                    type:      string
+                    type:      choice
                     label:     Sweetness
                     data_name: rd.wine_sweetness
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.appellation->getSweetnesses
+                wine_sparklingness:
+                    type:      choice
+                    label:     Sparklingness
+                    data_name: rd.wine_sparklingness
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.appellation->getSparklingnesses
+                soil:
+                    type:      choice
+                    label:     Soil
+                    data_name: rd.soil
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.appellation->getSoils
+
                 annual_production_quantity:
                     type:      number
                     label:     Production
@@ -90,10 +119,10 @@ datagrid:
                     type:      number
                     label:     Area
                     data_name: rd.area
-                #creation_year:
-                #    type:      string
-                #    label:     Creation
-                #    data_name: rd.creation_year
+                year:
+                    type:      number
+                    label:     Creation
+                    data_name: rd.year
 
         sorters:
             columns:
@@ -101,18 +130,20 @@ datagrid:
                     data_name: rd.code
                 name:
                     data_name: rd.name
-                appellation_type:
-                    data_name: rd.appellation_type
+                type:
+                    data_name: rd.type
                 wine_color:
                     data_name: rd.wine_color
                 wine_sweetness:
                     data_name: rd.wine_sweetness
+                wine_sparklingness:
+                    data_name: rd.wine_sparklingness
                 annual_production_quantity:
                     data_name: rd.annual_production_quantity
                 area:
                     data_name: rd.area
-                #creation_year:
-                #    data_name: rd.creation_year
+                year:
+                    data_name: rd.year
 
             default:
                 code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'

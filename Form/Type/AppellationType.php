@@ -33,15 +33,18 @@ class AppellationType extends AbstractType implements ContainerAwareInterface
         $this->appellationOptions = $this->container->getParameter('appellations');
         $this->wineOptions = $this->container->getParameter('wines');
         $builder->add('name');
-        $builder->add('appellation_type',
+        /**
+        $builder->add('type',
             'choice', [
                 'choices' => $this->appellationOptions['types'],
                 'choices_as_values' => true,
             ]
         );
+         */
         $builder->add('area', 'integer');
         $builder->add('annual_production_quantity', 'integer');
         $builder->add('soil');
+        /**
         $builder->add('wine_sweetness',
             'choice', [
                 'choices' => $this->wineOptions['sweetness'],
@@ -60,13 +63,14 @@ class AppellationType extends AbstractType implements ContainerAwareInterface
             'expanded' => true,
             'multiple' => true,
         ]);
+         */
         $builder->add('description', 'textarea');
         $builder->add('odg_name');
         $builder->add('odg_url', 'url');
         $builder->add('wikipedia_url', 'url');
         $builder->add('wikidata_url', 'url');
         $builder->add('image_url', 'url');
-        $builder->add('creation_year', 'integer');
+        $builder->add('year', 'integer');
     }
 
     /**
@@ -84,4 +88,63 @@ class AppellationType extends AbstractType implements ContainerAwareInterface
     {
         return 'pim_custom_entity';
     }
+
+    public function getSparklingnesses()
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['sparklingness'];
+    }
+
+    public function getSparklingness($key)
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['sparklingness'][$key];
+    }
+
+    public function getSweetnesses()
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['sweetness'];
+    }
+
+    public function getSweetness($key)
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['sweetness'][$key];
+    }
+
+    public function getColors()
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['colors'];
+    }
+
+    public function getColor($key)
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['colors'][$key];
+    }
+
+    public function getSoils()
+    {
+        return $this
+            ->container
+            ->get('openwines.repository.appellation')
+            ->findUniqueSoils();
+    }
+
+    public function getSoil($key)
+    {
+        $options = $this->container->getParameter('wines');
+
+        return $options['soils'][$key];
+    }
+
+
 }

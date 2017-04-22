@@ -1,20 +1,36 @@
 parameters:
-#    open_wines_web_app.example.class: OpenWines\ReferencesBundle\Example
+    openwines.grid.after.class: OpenWines\ReferencesBundle\Listener\OnGridBuildAfterListener
+    openwines.entity.appellation.class: OpenWines\ReferencesBundle\Entity\Appellation
+    openwines.type.appellation.class: OpenWines\ReferencesBundle\Form\Type\AppellationType
+    openwines.type.region.class: OpenWines\ReferencesBundle\Form\Type\RegionType
+    openwines.type.varietal.class: OpenWines\ReferencesBundle\Form\Type\VarietalType
+    openwines.repository.appellation.class: OpenWines\ReferencesBundle\Repository\AppellationRepository
+
+
 
 services:
     openwines.form.appellation:
-        class: OpenWines\ReferencesBundle\Form\Type\AppellationType
+        class: %openwines.type.appellation.class%
         calls:
               - [setContainer, ['@service_container']]
         tags:
             - { name: form.type, alias: openwines_appellation }
     openwines.form.region:
-        class: OpenWines\ReferencesBundle\Form\Type\RegionType
+        class: %openwines.type.region.class%
         calls:
               - [setContainer, ['@service_container']]
         tags:
             - { name: form.type, alias: openwines_region }
     openwines.form.varietal:
-        class: OpenWines\ReferencesBundle\Form\Type\VarietalType
+        class: %openwines.type.varietal.class%
         tags:
             - { name: form.type, alias: openwines_varietal }
+    openwines.grid.after.listener:
+        class: %openwines.grid.after.class%
+        tags:
+            - { name: kernel.event_listener, event: oro_datagrid.datagrid.build.after.calls-grid, method: onBuildAfter }
+    openwines.repository.appellation:
+        class: %openwines.repository.appellation.class%
+        factory: ["@doctrine", getRepository]
+        arguments:
+            - %openwines.entity.appellation.class%

@@ -19,4 +19,18 @@ class RegionRepository extends BaseRepository
 
     /** *************** */
     /** B U I L D E R S */
+
+    /**
+     * @return Doctrine\ORM\QueryBuilder
+     */
+    public function getRegionsWithLabels()
+    {
+        return $this->em->createQueryBuilder()
+            ->from('OpenWinesReferencesBundle:Region', 'r')
+            ->select('r')
+            // ->where(...)
+            // ->join(...)
+            // ->orderBy(...)
+            ;
+    }
 }
