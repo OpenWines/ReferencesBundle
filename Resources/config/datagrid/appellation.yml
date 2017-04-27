@@ -7,8 +7,6 @@ datagrid:
             entity: OpenWines\ReferencesBundle\Entity\Appellation
             repository_method: createDatagridQueryBuilder
         columns:
-            code:
-                label: Code
             name:
                 label: Name
             type:
@@ -19,14 +17,6 @@ datagrid:
                 label: Sparklingness
             wine_color:
                 label: Color
-            annual_production_quantity:
-                label: Production (hl)
-            soil:
-                label: Soil
-            area:
-                label: Area (ha)
-            year:
-                label: Creation
         properties:
             id: ~
             show_link:
@@ -78,6 +68,10 @@ datagrid:
                     type:      choice
                     label:     Type
                     data_name: rd.type
+                    options:
+                        field_options:
+                            multiple: true
+                            choices: @openwines.form.appellation->getTypesAcronyms
                 wine_color:
                     type:      choice
                     label:     Color
@@ -126,8 +120,6 @@ datagrid:
 
         sorters:
             columns:
-                code:
-                    data_name: rd.code
                 name:
                     data_name: rd.name
                 type:
@@ -138,12 +130,6 @@ datagrid:
                     data_name: rd.wine_sweetness
                 wine_sparklingness:
                     data_name: rd.wine_sparklingness
-                annual_production_quantity:
-                    data_name: rd.annual_production_quantity
-                area:
-                    data_name: rd.area
-                year:
-                    data_name: rd.year
 
             default:
                 code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'

@@ -146,5 +146,10 @@ class AppellationType extends AbstractType implements ContainerAwareInterface
         return $options['soils'][$key];
     }
 
+    public function getTypesAcronyms()
+    {
+        $options = $this->container->getParameter('appellations');
 
+        return array_keys($options['types']);
+    }
 }
