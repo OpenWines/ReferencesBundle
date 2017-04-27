@@ -64,6 +64,9 @@ class AppellationType extends AbstractType implements ContainerAwareInterface
             'multiple' => true,
         ]);
          */
+        $builder->add('eye', 'textarea');
+        $builder->add('nose', 'textarea');
+        $builder->add('mouth', 'textarea');
         $builder->add('description', 'textarea');
         $builder->add('odg_name');
         $builder->add('odg_url', 'url');

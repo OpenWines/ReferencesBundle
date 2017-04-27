@@ -128,6 +128,21 @@ class Appellation extends ReferenceEntity
     protected $wine_sparklingness;
 
     /**
+     * @var string appellation's wines eye
+     */
+    protected $eye;
+
+    /**
+     * @var string appellation's wines nose
+     */
+     protected $nose;
+
+    /**
+     * @var string appellation's wines mouth
+     */
+    protected $mouth;
+
+    /**
      * @var ArrayCollection varietals (cépages)
      */
     protected $varietals;
@@ -617,5 +632,53 @@ class Appellation extends ReferenceEntity
     public function setImageUrl($image_url)
     {
         $this->image_url = $image_url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEye()
+    {
+        return $this->eye;
+    }
+
+    /**
+     * @param string $eye
+     */
+    public function setEye($eye)
+    {
+        $this->eye = $eye;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNose()
+    {
+        return $this->nose;
+    }
+
+    /**
+     * @param string $nose
+     */
+    public function setNose($nose)
+    {
+        $this->nose = $nose;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMouth()
+    {
+        return $this->mouth;
+    }
+
+    /**
+     * @param string $mouth
+     */
+    public function setMouth($mouth)
+    {
+        $this->mouth = $mouth;
     }
 }

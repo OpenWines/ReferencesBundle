@@ -99,6 +99,18 @@ OpenWines\ReferencesBundle\Entity\Appellation:
             type: simple_array
             unique: false
             nullable: true
+        eye:
+            type: text
+            unique: false
+            nullable: true
+        nose:
+            type: text
+            unique: false
+            nullable: true
+        mouth:
+            type: text
+            unique: false
+            nullable: true
         description:
             type: text
             unique: false
